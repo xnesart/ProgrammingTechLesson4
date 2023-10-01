@@ -4,40 +4,55 @@ namespace ProgrammingTechLesson4
 {
     public class Boat
     {
-        public double TechnicalCondition;
-        public double Fuel;
-        public double PowerReserve;
-        public string Order;
+        private double _technicalCondition;
+        private double _fuel;
+        private double _powerReserve;
+        private string _order;
+        public double TechnicalCondition
+        {
+            get { return _technicalCondition; }
+            private set { }
+        }
+        public double Fuel
+        {
+            get { return _fuel; }
+            private set { }
+        }
+        public double PowerReserve
+        {
+            get { return _powerReserve; }
+            private set { }
+        }
 
         public Boat(int technicalCondition, double fuel, double powerReserve, string order)
         {
-            TechnicalCondition = technicalCondition;
-            Fuel = fuel;
-            PowerReserve = powerReserve;
-            Order = order;
+            _technicalCondition = technicalCondition;
+            _fuel = fuel;
+            _powerReserve = powerReserve;
+            _order = order;
         }
 
         public void Swim(int time)
         {
-            if (Order == "права на катер" || PowerReserve > time)
+            if (_order == "права на катер" || _powerReserve > time)
             {
                 for (int i = 0; i < time; i++)
                 {
-                    if (Fuel == 0 || TechnicalCondition == 0 || PowerReserve == 0)
+                    if (_fuel == 0 || _technicalCondition == 0 || _powerReserve == 0)
                     {
                         Console.WriteLine("обслужите катер! остановка!");
                         break;
                     }
                     else
                     {
-                        TechnicalCondition -= 0.1;
-                        Fuel -= 0.35;
+                        _technicalCondition -= 0.1;
+                        _fuel -= 0.35;
                     }
                 }
             }
             else
             {
-                if (Order != "права на катер") Console.WriteLine("у вас нет прав на катер!");
+                if (_order != "права на катер") Console.WriteLine("у вас нет прав на катер!");
                 else Console.WriteLine("запас хода меньше, чем расстояние до пункта назначения!");
             }
         }
@@ -45,22 +60,22 @@ namespace ProgrammingTechLesson4
         public void GetFuel(double value)
         {
                 Console.WriteLine($"Заправка на {value}");
-                Fuel += value;
-                Console.WriteLine($"топливо катера = {Fuel}");
+                _fuel += value;
+                Console.WriteLine($"топливо катера = {_fuel}");
         }
 
         public void GetRepair(int value)
         {
             Console.WriteLine("выполняется починка");
-            TechnicalCondition += value;
-            Console.WriteLine($"состояние катера = {TechnicalCondition}");
+            _technicalCondition += value;
+            Console.WriteLine($"состояние катера = {_technicalCondition}");
         }
 
         public void ChangePilot(string value)
         {
             if (value == "права на катер")
             {
-                Order = value;
+                _order = value;
                 Console.WriteLine("пилот допущен к управлению");
             }
             else Console.WriteLine("Пилот не допущен к управлению, проверьте лицензию");

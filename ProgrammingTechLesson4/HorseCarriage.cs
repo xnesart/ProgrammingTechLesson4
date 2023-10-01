@@ -4,31 +4,45 @@ namespace ProgrammingTechLesson4
 {
     public class HorseCarriage
     {
-        public double TechnicalCondition;
-        public double Fuel;
-        public double PowerReserve;
-
+        private double _technicalCondition;
+        private double _fuel;
+        private double _powerReserve;
+        public double TechnicalCondition
+        {
+            get { return _technicalCondition; }
+            private set { }
+        }
+        public double Fuel
+        {
+            get { return _fuel; }
+            private set { }
+        }
+        public double PowerReserve
+        {
+            get { return _powerReserve; }
+            private set { }
+        }
         public HorseCarriage(int technicalCondition, double fuel, double powerReserve)
         {
-            TechnicalCondition = technicalCondition;
-            Fuel = fuel;
-            PowerReserve = powerReserve;
+            _technicalCondition = technicalCondition;
+            _fuel = fuel;
+            _powerReserve = powerReserve;
         }
 
         public void Ride(int time)
         {
-            if (PowerReserve > time)
+            if (_powerReserve > time)
             {
                 for (int i = 0; i < time; i++)
                 {
-                    if (Fuel == 0 || TechnicalCondition == 0 || PowerReserve == 0)
+                    if (_fuel == 0 || _technicalCondition == 0 || _powerReserve == 0)
                     {
                         break;
                     }
                     else
                     {
-                        TechnicalCondition -= 0.1;
-                        Fuel -= 0.95;
+                        _technicalCondition -= 0.1;
+                        _fuel -= 0.95;
                     }
                 }
             }
@@ -41,15 +55,15 @@ namespace ProgrammingTechLesson4
         public void GetFuel(double value)
         {
             Console.WriteLine($"Кормление лошади на {value}");
-            Fuel += value;
-            Console.WriteLine($"Лошадь покормлена = {Fuel}");
+            _fuel += value;
+            Console.WriteLine($"Лошадь покормлена = {_fuel}");
         }
 
         public void GetRepair(int value)
         {
             Console.WriteLine("выполняется починка");
-            TechnicalCondition += value;
-            Console.WriteLine($"состояние повозки = {TechnicalCondition}");
+            _technicalCondition += value;
+            Console.WriteLine($"состояние повозки = {_technicalCondition}");
         }
     }
 }

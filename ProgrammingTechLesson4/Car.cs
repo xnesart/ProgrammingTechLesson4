@@ -4,64 +4,78 @@ namespace ProgrammingTechLesson4
 {
     public class Car
     {
-        public double TechnicalCondition;
-        public double Fuel;
-        public double PowerReserve;
-        public string Order;
+        private double _technicalCondition;
+        private double _fuel;
+        private double _powerReserve;
+        private string _order;
 
+        public double TechnicalCondition
+        {
+            get { return _technicalCondition; }
+            private set { }
+        }
+        public double Fuel
+        {
+            get { return _fuel; }
+            private set { }
+        }
+        public double PowerReserve
+        {
+            get { return _powerReserve; }
+            private set { }
+        }
         public Car(int technicalCondition, double fuel, double powerReserve, string order)
         {
-            TechnicalCondition = technicalCondition;
-            Fuel = fuel;
-            PowerReserve = powerReserve;
-            Order = order;
+            _technicalCondition = technicalCondition;
+            _fuel = fuel;
+            _powerReserve = powerReserve;
+            _order = order;
         }
 
         public void Ride(int time)
         {
-            if (Order == "права на автомобиль" || PowerReserve > time)
+            if (_order == "права на автомобиль" || _powerReserve > time)
             {
                 for (int i = 0; i < time; i++)
                 {
-                    if (Fuel == 0 || TechnicalCondition == 0 || PowerReserve == 0)
+                    if (_fuel == 0 || _technicalCondition == 0 || _powerReserve == 0)
                     {
                         Console.WriteLine("обслужите машину! остановка!");
                         break;
                     }
                     else
                     {
-                        TechnicalCondition -= 0.1;
-                        Fuel -= 0.35;
+                        _technicalCondition -= 0.1;
+                        _fuel -= 0.35;
                     }
                 }
             }
             else
             {
-                if (Order != "права на автомобиль") Console.WriteLine("у вас нет прав на автомобиль!");
+                if (_order != "права на автомобиль") Console.WriteLine("у вас нет прав на автомобиль!");
                 else Console.WriteLine("запас хода меньше, чем расстояние до пункта назначения!");
             }
         }
 
         public void GetFuel(double value)
         {
-                Console.WriteLine($"Заправка на {value}");
-                Fuel += value;
-                Console.WriteLine($"топливо автомобиля = {Fuel}");
-           
+            Console.WriteLine($"Заправка на {value}");
+            _fuel += value;
+            Console.WriteLine($"топливо автомобиля = {_fuel}");
         }
 
         public void GetRepair(int value)
         {
             Console.WriteLine("выполняется починка");
-            TechnicalCondition += value;
-            Console.WriteLine($"состояние автомобиля = {TechnicalCondition}");
+            _technicalCondition += value;
+            Console.WriteLine($"состояние автомобиля = {_technicalCondition}");
         }
 
         public void ChangePilot(string value)
         {
             if (value == "права на автомобиль")
             {
-                Order = value;
+                _order = value;
                 Console.WriteLine("водитель допущен к управлению");
             }
             else Console.WriteLine("водитель не допущен к управлению, проверьте лицензию");

@@ -4,40 +4,55 @@ namespace ProgrammingTechLesson4
 {
     public class Aircraft
     {
-        public double TechnicalCondition;
-        public double Fuel;
-        public double PowerReserve;
-        public string Order;
+        private double _technicalCondition;
+        private double _fuel;
+        private double _powerReserve;
+        private string _order;
+        public double TechnicalCondition
+        {
+            get { return _technicalCondition; }
+            private set { }
+        }
+        public double Fuel
+        {
+            get { return _fuel; }
+            private set { }
+        }
+        public double PowerReserve
+        {
+            get { return _powerReserve; }
+            private set { }
+        }
 
         public Aircraft(int technicalCondition, double fuel, double powerReserve, string order)
         {
-            TechnicalCondition = technicalCondition;
-            Fuel = fuel;
-            PowerReserve = powerReserve;
-            Order = order;
+            _technicalCondition = technicalCondition;
+            _fuel = fuel;
+            _powerReserve = powerReserve;
+            _order = order;
         }
 
         public void Fly(int time)
         {
-            if (Order == "лицензия пилота" || PowerReserve > time)
+            if (_order == "лицензия пилота" || _powerReserve > time)
             {
                 for (int i = 0; i < time; i++)
                 {
-                    if (Fuel == 0 || TechnicalCondition == 0 || PowerReserve == 0)
+                    if (_fuel == 0 || _technicalCondition == 0 || _powerReserve == 0)
                     {
                         Console.WriteLine("обслужите самолёт! Полет прекращен");
                         break;
                     }
                     else
                     {
-                        TechnicalCondition -= 0.1;
-                        Fuel -= 0.5;
+                        _technicalCondition -= 0.1;
+                        _fuel -= 0.5;
                     }
                 }
             }
             else
             {
-                if (Order != "лицензия пилота") Console.WriteLine("у вас нет прав на полеты!");
+                if (_order != "лицензия пилота") Console.WriteLine("у вас нет прав на полеты!");
                 else Console.WriteLine("запас хода меньше, чем время полёта, мы не полетим!");
             }
         }
@@ -45,21 +60,21 @@ namespace ProgrammingTechLesson4
         public void GetFuel(double value)
         {
                 Console.WriteLine($"Заправка на {value}");
-                Fuel += value;
+                _fuel += value;
         }
 
         public void GetRepair(double value)
         {
             Console.WriteLine("выполняется починка");
-            TechnicalCondition += value;
-            Console.WriteLine($"состояние самолета = {TechnicalCondition}");
+            _technicalCondition += value;
+            Console.WriteLine($"состояние самолета = {_technicalCondition}");
         }
 
         public void ChangePilot(string value)
         {
             if (value == "лицензия пилота")
             {
-                Order = value;
+                _order = value;
                 Console.WriteLine("пилот допущен к управлению");
             }
             else Console.WriteLine("Пилот не допущен к управлению, проверьте лицензию");

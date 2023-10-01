@@ -1,0 +1,6 @@
+/Users/homeland/RiderProjects/ProgrammingTechLesson4/ProgrammingTechLesson4/bin/Debug/ProgrammingTechLesson4.exe
+/Users/homeland/RiderProjects/ProgrammingTechLesson4/ProgrammingTechLesson4/bin/Debug/ProgrammingTechLesson4.pdb
+/Users/homeland/RiderProjects/ProgrammingTechLesson4/ProgrammingTechLesson4/obj/Debug/ProgrammingTechLesson4.csproj.AssemblyReference.cache
+/Users/homeland/RiderProjects/ProgrammingTechLesson4/ProgrammingTechLesson4/obj/Debug/ProgrammingTechLesson4.csproj.CoreCompileInputs.cache
+/Users/homeland/RiderProjects/ProgrammingTechLesson4/ProgrammingTechLesson4/obj/Debug/ProgrammingTechLesson4.exe
+/Users/homeland/RiderProjects/ProgrammingTechLesson4/ProgrammingTechLesson4/obj/Debug/ProgrammingTechLesson4.pdb

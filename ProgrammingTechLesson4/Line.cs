@@ -4,23 +4,19 @@ namespace ProgrammingTechLesson4
 {
     public class Line
     {
-        private double startX;
-        private double startY;
-        private double endX;
-        private double endY;
+        private Point startPoint;
+        private Point endPoint;
 
-        public Line(double sX, double sY, double eX,double eY)
+        public Line(Point startPoint, Point endPoint)
         {
-            startX = sX;
-            startY = sY;
-            endX = eX;
-            endY = eY;
+            this.startPoint = startPoint;
+            this.endPoint = endPoint;
         }
         //проверяет, принадлежит ли точка линии
         public bool isBelongAtLine(Point point)
         {
-            double startPos = point.Distance(startX, startY);
-            double endPos = point.Distance(endX, endY);
+            double startPos = point.Distance(startPoint.GetX(), startPoint.GetY());
+            double endPos = point.Distance(endPoint.GetX(), endPoint.GetY());
             if (startPos + endPos - this.GetLength() == 0)
             {
                 return true;
@@ -30,8 +26,8 @@ namespace ProgrammingTechLesson4
         //вычисляет длину линии
         public double GetLength()
         {
-            return Math.Sqrt(Math.Pow((endX - startX), 2) +
-                             Math.Pow((endY - startY), 2));
+            return Math.Sqrt(Math.Pow((endPoint.GetX() - startPoint.GetX()), 2) +
+                             Math.Pow((endPoint.GetY() - startPoint.GetY()), 2));
         }
     }
 }

@@ -8,15 +8,20 @@ namespace ProgrammingTechLesson4
         {
             //Точка
             Console.WriteLine("задание 1");
-            Point somePoint = new Point(2, 6);
+            Point somePoint = new Point(4, 6);
             double pointResult = somePoint.Distance();
             Console.WriteLine("Расстояние точки от начала координат = " + pointResult);
             //Линия
-            Line line = new Line(6, 6, 3, 6);
-            Console.WriteLine($"длина линии = {line.GetLength()}");
-            Console.WriteLine($"Искомая точка = {line.isBelongAtLine(somePoint)}");
+            Point startPoint = new Point(6, 6);
+            Point endPoint = new Point(3, 6);
+            Line line = new Line(startPoint,endPoint);
+            Console.WriteLine($"Длина линии = {line.GetLength()}");
+            Console.WriteLine($"Точка принадлежит линии = {line.isBelongAtLine(somePoint)}");
             //Квадрат
-            Square square = new Square(3, 3, 2);
+            Point leftAngle = new Point(3, 3);
+            Square square = new Square(leftAngle, 3);
+            Point searchPoint = new Point(3, 3);
+            Console.WriteLine($"Искомая точка принадлежит квадрату = {square.ContainsPoint(searchPoint,leftAngle)}");
             Console.WriteLine($"Площадь квадрата = {square.getSquare()}"); 
             Console.WriteLine($"Периметр квадрата = {square.getPerimeter()}");
             
@@ -43,7 +48,7 @@ namespace ProgrammingTechLesson4
             Console.WriteLine($"количество этажей в здании = {house.numberOfFloors}");
             Console.WriteLine($"площадь в здании = {house.square}");
             Console.WriteLine($"количество жильцов = {house.numberOfTenants}");
-            Console.WriteLine($"Здание жилое? = {house.isResidental}");
+            Console.WriteLine($"здание жилое? = {house.isResidental}");
             
             
             //Задание 3
@@ -75,7 +80,6 @@ namespace ProgrammingTechLesson4
             Console.WriteLine($"|Катер| Топливо: {Math.Round(smallBoat.Fuel,4)} | Состояние: {Math.Round(smallBoat.TechnicalCondition,4)}");
             Console.WriteLine($"|Машина| Топливо: {Math.Round(niceCar.Fuel,4)} | Состояние: {Math.Round(niceCar.TechnicalCondition,4)}");
             Console.WriteLine($"|Повозка| Топливо: {Math.Round(carriage.Fuel,4)} | Состояние: {Math.Round(carriage.TechnicalCondition,4)}");
-
         }
     }
 }

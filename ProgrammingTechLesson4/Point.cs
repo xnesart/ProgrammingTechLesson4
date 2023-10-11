@@ -22,6 +22,16 @@ namespace ProgrammingTechLesson4
             coordinatesY = y;
         }
 
+        public double GetX()
+        {
+            return coordinatesX;
+        }
+
+        public double GetY()
+        {
+            return coordinatesY;
+        }
+
         /// <summary>
         /// вычисляет расстояние от точки до начала координат
         /// </summary>

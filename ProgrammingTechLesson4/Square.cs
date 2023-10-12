@@ -47,6 +47,5 @@ namespace ProgrammingTechLesson4
             return x >= squareX && x <= squareX + line.GetLength() &&
                    y >= squareY && y <= squareY + line.GetLength();
         }
-
     }
 }

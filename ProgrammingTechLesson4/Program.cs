@@ -37,6 +37,7 @@ namespace ProgrammingTechLesson4
             // 
             
             //создаем офис
+            Console.WriteLine("задание 2");
             Building office = new Building(3,100,0,false);
             Console.WriteLine($"количество этажей в здании = {office.numberOfFloors}");
             Console.WriteLine($"площадь в здании = {office.square}");
@@ -54,7 +55,8 @@ namespace ProgrammingTechLesson4
             //Задание 3
             //Вы участвуете в разработке компьютерной игры.
             //В качестве объектов игрового мира выступают средства транспорта различных типов
-            //реализовать эти классы, затем протестировать их с помощью описанных процедур перемещения, изменения состояния. 
+            //реализовать эти классы, затем протестировать их с помощью описанных процедур перемещения, изменения состояния.
+            Console.WriteLine("задание 3");
             Aircraft smallAircraft = new Aircraft(100, 100, 100, "лицензия пилота");
             smallAircraft.Fly(30);
             Boat smallBoat = new Boat(100, 100, 100, "права на катер");
